@@ -1,0 +1,24 @@
+---
+import ThemeIcon from '../components/ThemeIcon.astro'
+---
+
+<div class="bg-[#eee] dark:bg-[#455055] pb-5px">
+  <header responsive-divs class="pt-100px pb-0px mb-50px grid grid-cols-1 content-center justify-items-center">
+    <a href="/" aria-label="inicio" class="no-underline">
+      <h1 is-special-link class="">margin-js | kuworking</h1>
+    </a>
+    <p class="flex items-center leading-tight">
+      <a class="hover:text-[#ADADAD] dark:hover:text-[#AE7373]" href="https://www.gatsbyjs.com">Gatsby</a>
+      <span class="hidden md:block px-3px"> |</span>
+      <a class="hover:text-[#ADADAD] dark:hover:text-[#AE7373] hidden md:block" href="https://developer.wordpress.org"> Wordpress (React)</a>
+      <span class="inline-block w-25px h-25px px-5px i-ph-arrow-square-right-duotone"></span>
+      <a class="hover:text-[#ADADAD] dark:hover:text-[#AE7373]" href="https://www.11ty.dev">11ty</a>
+      <span class="inline-block w-25px h-25px px-5px i-ph-arrow-square-right-duotone"></span>
+
+      <a is-special-link class="" href="https://astro.build/">Astro</a><span class="px-3px">|</span>
+      <a is-special-link class="" href="https://unocss.dev/">UnoCSS</a><span class="px-3px">|</span>
+      <a is-special-link class="" href="https://www.solidjs.com/">SolidJS</a>
+    </p>
+    <ThemeIcon />
+  </header>
+</div>

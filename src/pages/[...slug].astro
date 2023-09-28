@@ -1,0 +1,110 @@
+---
+import { getCollection } from 'astro:content'
+
+import Main from '../layouts/Main.astro'
+
+export const getStaticPaths = async () => {
+  const allPosts_js = await getCollection('js')
+  const allPosts_react = await getCollection('react')
+
+  return [...allPosts_js, ...allPosts_react].map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }))
+}
+
+const { entry } = Astro.props
+const { Content, headings } = await entry.render()
+const main_headers = headings.filter(h => h.depth === 1)
+---
+
+<Main>
+  <div responsive-divs-narrow class="grid grid-cols-1">
+    <h1>
+      {entry.data.title.split('#').map((el, i) => (i % 2 === 0 ? <span>{el}</span> : <span is-em>{el}</span>))}
+    </h1>
+
+    <div class="">
+      {
+        () => {
+          const currentDate = new Date()
+          currentDate.setMonth(currentDate.getMonth() - 12)
+          return new Date(entry.data.date) < currentDate ? (
+            <span class="">Ojo, este artículo no se ha actualizado desde hace más de 12 meses</span>
+          ) : (
+            <div />
+          )
+        }
+      }
+    </div>
+
+    <ul class="">
+      {
+        main_headers.length > 1 ? (
+          main_headers.map(h => (
+            <li>
+              <div class="cursor-pointer" id={'toc_' + h.slug}>
+                {h.text}
+              </div>
+            </li>
+          ))
+        ) : (
+          <div />
+        )
+      }
+    </ul>
+
+    <article class="mb-200px">
+      <Content />
+    </article>
+  </div>
+
+  <script define:vars={{ main_headers }}>
+    if (main_headers.length > 1)
+      main_headers.map(h =>
+        document
+          .querySelector('#toc_' + h.slug)
+          .addEventListener('click', () => document.querySelector('#' + h.slug).scrollIntoView({ behavior: 'smooth' }))
+      )
+  </script>
+</Main>
+
+<style>
+  article :global(:not(pre) > code) {
+    font-family: monospace;
+    display: inline-block;
+    font-weight: 400;
+    border-radius: 3px;
+    padding: 1px 4px;
+    color: #ffffff;
+    background: #2e3440ff;
+    transition:
+      background 0.2s ease,
+      color 0.3s ease;
+    font-size: 0.9em;
+  }
+
+  html.dark article :global(:not(pre) > code) {
+    color: #ffffff;
+    background: #141516;
+  }
+
+  article :global(:not(pre) > code::before) {
+    content: '';
+  }
+  article :global(:not(pre) > code::after) {
+    content: '';
+  }
+
+  html.dark article > :global(pre) {
+    background-color: #141516 !important;
+  }
+
+  article :global(a:hover) {
+    color: var(--remark);
+  }
+
+  html.dark article :global(a:hover) {
+    color: var(--dark-remark);
+  }
+</style>

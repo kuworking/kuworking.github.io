@@ -1,0 +1,33 @@
+---
+import Main from '../layouts/Main.astro'
+import Header from '../components/Header.astro'
+---
+
+<Main>
+  <div
+    class="bg-[#fff] dark:bg-[#2b3235]
+           max-w-none
+           text-base
+           prose prose-neutral dark:prose-invert
+           font-roboto"
+  >
+    <div class="bg-[#eee] dark:bg-[#455055]">
+      <header
+        responsive-divs
+        class="h-400px
+      py-20px
+      mb-50px
+      grid
+      grid-cols-1
+      content-center
+      justify-items-center"
+      >
+        <Header />
+      </header>
+    </div>
+
+    <div>
+      Página no encontrada (!) <a href="/" aria-label="inicio" class="no-underline"> Ves a la página principal</a>
+    </div>
+  </div>
+</Main>

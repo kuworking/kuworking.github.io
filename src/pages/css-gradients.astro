@@ -1,0 +1,18 @@
+---
+import Main from '../layouts/Main.astro'
+
+import { Gradients } from '../components/CssGradients'
+---
+
+<Main>
+  <div responsive-divs class="grid grid-cols-1 mb-100px cssgradients">
+    <Gradients client:load />
+  </div>
+</Main>
+
+<style is:global>
+  :root {
+    --bg: #fff;
+    --dark-bg: #2b3235;
+  }
+  </style>

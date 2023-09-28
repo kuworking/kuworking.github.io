@@ -1,0 +1,12 @@
+---
+import Main from '../layouts/Main.astro'
+
+import { Fonts } from '../components/FontInspiration'
+---
+
+<Main>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" is:inline></script>
+
+  <Fonts client:load />
+</Main>
+

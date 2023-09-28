@@ -1,0 +1,83 @@
+---
+import { getCollection } from 'astro:content'
+import * as resources from '../components/resources.md'
+
+import Main from '../layouts/Main.astro'
+
+// ts type to prevent error, astro files are intended to run
+const data: any = [
+  ['Javascript', await getCollection('js')],
+  ['React', await getCollection('react')],
+]
+---
+
+<Main>
+  <div responsive-divs class="grid grid-cols-1 md:grid-cols-[minmax(0,_1fr)_300px] gap-30px lg:gap-60px">
+    <div>
+      <h3 class="mb-0px">Herramientas</h3>
+      <div class="px-15px py-10px bg-[#F0F0EBAC] dark:bg-[#455055] rounded-6px">
+        <ul class="my-0px list-outside">
+          <li><a is-special-link href="/css-gradients">Generador de gradientes</a></li>
+          <li><a is-special-link href="/font-inspiration">Explorador de fuentes google</a></li>
+        </ul>
+      </div>
+
+      <h3 class="mb-0px">Articulos</h3>
+      <div class="px-15px py-20px bg-[#F0F0EBAC] dark:bg-[#455055] rounded-6px">
+        <div>
+          {
+            data.map(topic => (
+              <>
+                <div>
+                  <div class="uppercase font-normal">{topic[0]}</div>
+                  <ul class="my-0px mb-20px list-outside">
+                    {topic[1].map(p => (
+                      <li class="">
+                        <a is-link href={p.slug}>
+                          {p.data.title.replaceAll('#', '')}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3 class="mb-0px">Enlaces</h3>
+      <div class="resources mt-0px mb-40px px-20px py-10px rounded-6px"><resources.Content /></div>
+    </div>
+  </div>
+</Main>
+
+<style>
+  .resources {
+  }
+  .resources :global(h3) {
+    font-weight: 300;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    padding: 0px;
+  }
+
+  .resources :global(ul) {
+    margin-top: 0px;
+    margin-bottom: 30px;
+  }
+
+  .resources :global(a) {
+    font-weight: 300;
+    text-decoration: none;
+  }
+
+  .resources :global(a:hover) {
+    color: #ff4300;
+  }
+
+  html.dark .resources :global(a:hover) {
+    color: #ff9689;
+  }
+</style>

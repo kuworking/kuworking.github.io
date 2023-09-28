@@ -1,0 +1,10 @@
+ text=lf
+ *.css linguist-vendored eol=lf
+ *.scss linguist-vendored eol=lf
+ *.js linguist-vendored eol=lf
+ *.php eol=lf
+ *.twig eol=lf
+ *.md eol=lf
+ *.mdx eol=lf
+ *.astro eol=lf
+ CHANGELOG.md export-ignore 

@@ -1,0 +1,56 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": ["plugin:astro/recommended"],
+  "overrides": [
+    {
+      "files": ["*.astro"],
+      //      "plugins": ["astro"],
+      //      "env": {
+      // Enables global variables available in Astro components.
+      //        "node": true,
+      //        "astro/astro": true,
+      //        "es2020": true
+      //      },
+      "parser": "astro-eslint-parser",
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser",
+        "extraFileExtensions": [".astro"]
+        //        "sourceType": "module"
+      },
+      "rules": {
+        //        "astro/no-conflict-set-directives": "error",
+        //        "astro/no-unused-define-vars-in-style": "error"
+      }
+    }
+
+    //    {
+    //      "files": ["**/*.astro/*.js", "*.astro/*.js"],
+    //     "env": {
+    //        "browser": true,
+    //        "es2020": true
+    //      },
+    //      "parserOptions": {
+    //        "sourceType": "module"
+    //      },
+    //      "rules": {
+    //        "prettier/prettier": "off"
+    //      }
+    //    }
+  ],
+  "plugins": ["prettier"],
+  "rules": {
+    "strict": 0
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  }
+}
+// https://ota-meshi.github.io/eslint-plugin-astro/user-guide/#parser-configuration

@@ -1,0 +1,4 @@
+[core]
+         autocrlf = false
+#[http]
+#	proxy = http://83.97.23.90:18080
