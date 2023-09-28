@@ -44,11 +44,11 @@ Entonces, la pregunta es, cómo puedo copiar estructuras y valores todo a la vez
 - Copia _simple_
 
 ```js
-let myObj = { site: 'https://www.kuworking.com/' }
-console.log(myObj.site) // https://www.kuworking.com/
+let myObj = { site: 'https://kuworking.github.io/' }
+console.log(myObj.site) // https://kuworking.github.io/
 
 let myObjCopy = myObj
-console.log(myObjCopy.site) // https://www.kuworking.com/
+console.log(myObjCopy.site) // https://kuworking.github.io/
 
 myObj.site = 'https://www.mevoyaotropiso.com'
 console.log(myObj.site) // https://www.mevoyaotropiso.com
@@ -61,7 +61,7 @@ Una copia _shallow_ nos dará un `object` que será una copia real en `myObj` y 
 
 ```js
 let myObj = {
-  site: 'https://www.kuworking.com/',
+  site: 'https://kuworking.github.io/',
   data: {
     type: 'blog',
     location: 'barcelona',
@@ -76,7 +76,7 @@ console.log(myObjCopy)
 
 /*
 {
-    "site": "https://www.kuworking.com/",  >___> NO ha cambiado
+    "site": "https://kuworking.github.io/",  >___> NO ha cambiado
     "data": {
         "type": "mudanza",  >>>>> ha cambiado
         "location": "barcelona"
@@ -116,7 +116,7 @@ Se hace con `JSON.stringify` y `JSON.parse`
 
 ```js
 let myObj = {
-  site: 'https://www.kuworking.com/',
+  site: 'https://kuworking.github.io/',
   data: {
     type: 'blog',
     location: 'barcelona',
@@ -131,7 +131,7 @@ console.log(myObjCopy)
 
 /*
 {
-    "site": "https://www.kuworking.com/",
+    "site": "https://kuworking.github.io/",
     "data": {
         "type": "blog",
         "location": "barcelona"

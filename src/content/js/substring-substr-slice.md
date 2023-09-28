@@ -9,12 +9,12 @@ Nos devuelve un nuevo _string_ que contiene el segmento que le especificamos
 
 <!-- prettier-ignore -->
 ```js
-const str = 'https://www.kuworking.com/'
+const str = 'https://kuworking.github.io/'
 let new_str
 new_str = str.substring(8, 11) // -> www
-new_str = str.substring(8) // -> www.kuworking.com/
-new_str = str.substring(8, str.length - 1) // -> www.kuworking.com
-new_str = str.substring(0, str.length - 1) // -> https://www.kuworking.com
+new_str = str.substring(8) // -> kuworking.github.io/
+new_str = str.substring(8, str.length - 1) // -> kuworking.github.io
+new_str = str.substring(0, str.length - 1) // -> https://kuworking.github.io
 new_str = str.substring(0, -1) // no funciona, no acepta números negativos
 ```
 
@@ -24,12 +24,12 @@ En el caso de `substr` tienes lo mismo que `substring`, pero mientras antes espe
 
 <!-- prettier-ignore -->
 ```js
-const str = 'https://www.kuworking.com/'
+const str = 'https://kuworking.github.io/'
 let new_str
 new_str = str.substr(8, 3) // -> www
-new_str = str.substr(8) // -> www.kuworking.com/
-new_str = str.substr(8, 17) // -> www.kuworking.com
-new_str = str.substr(0, 25) // -> https://www.kuworking.com
+new_str = str.substr(8) // -> kuworking.github.io/
+new_str = str.substr(8, 17) // -> kuworking.github.io
+new_str = str.substr(0, 25) // -> https://kuworking.github.io
 new_str = str.substr(0, -1) // no funciona, no acepta números negativos
 ```
 
@@ -43,12 +43,12 @@ En este caso, escoger _substr_ sería complicarse sin motivo
 
 <!-- prettier-ignore -->
 ```js
-const str = 'https://www.kuworking.com/'
+const str = 'https://kuworking.github.io/'
 let new_str
 new_str = str.slice(8, 11) // -> www
-new_str = str.slice(8) // -> www.kuworking.com/
-new_str = str.slice(8, str.length-1) // -> www.kuworking.com
-new_str = str.slice(0, str.length-1) // -> https://www.kuworking.com
-new_str = str.slice(0, -1) // -> https://www.kuworking.com
+new_str = str.slice(8) // -> kuworking.github.io/
+new_str = str.slice(8, str.length-1) // -> kuworking.github.io
+new_str = str.slice(0, str.length-1) // -> https://kuworking.github.io
+new_str = str.slice(0, -1) // -> https://kuworking.github.io
 new_str = str.slice(-4) // -> com/
 ```

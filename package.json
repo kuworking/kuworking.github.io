@@ -1,6 +1,6 @@
 {
-  "name": "kuworking-astro",
-  "version": "1.0.0",
+  "name": "kuworking.github.io",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kuworking/kuworking-astro"
+    "url": "https://github.com/kuworking/kuworking.github.io"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.0.0",
