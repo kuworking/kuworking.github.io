@@ -1,115 +1,22 @@
 ---
+import Head from '../components/Head.astro'
+import Analytics from '../components/Analytics.astro'
+import '../styles/panels.css'
+import '../styles/colors.css'
 import Header from '../components/Header.astro'
-
-const title = 'margin-js | kuworking'
-const url = 'https://kuworking.github.io'
-const canonical = url + Astro.url.pathname
-
-const schemaOrgJSONLD = JSON.stringify({
-  '@context': 'https://schema.org',
-  title: title,
-  name: title,
-  headline: title,
-  description: title,
-  mainEntityOfPage: {
-    '@type': 'WebSite',
-    '@id': 'https://schema.org/WebSite',
-  },
-  author: {
-    '@type': 'Person',
-    name: 'margin-js | kuworking',
-  },
-  publisher: {
-    '@type': 'Person',
-    name: 'margin-js | kuworking',
-    logo: {
-      '@type': 'ImageObject',
-      url: url + '/favicon.png',
-    },
-  },
-})
 ---
 
-<html lang='es' class="">
-  <head>
-    <!-- https://www.favicon-generator.org/ -->
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png" />
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png" />
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png" />
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/manifest.json" />
-    <meta name="msapplication-TileColor" content="#ffffff" />
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
-    <meta name="theme-color" content="#ffffff" />
-    <!--  -->
-
-    <title>{title}</title>
-    <link rel="sitemap" href="/sitemap-0.xml" />
-
-    <link rel="canonical" href={canonical} />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta charset="utf-8" />
-    <meta name="description" content={title} />
-    <meta name="keywords" content="javascript, astro, solidjs" />
-    <meta name="robots" content="index, follow" />
-
-    <script type="application/ld+json" set:html={schemaOrgJSONLD} />
-
-    <meta property="og:site_name" content={title} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={title} />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={url} />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:creator" content={title} />
-    <meta name="twitter:site" content={title} />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={title} />
-    <meta name="twitter:domain" content={canonical} />
-    <meta name="twitter:image" content="https://source.unsplash.com/random" />
-  </head>
-
-  <body>
-    <!-- Google tag (gtag.js) -->
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-GHFW1P61PR"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || []
-      function gtag() {
-        dataLayer.push(arguments)
-      }
-      gtag('js', new Date())
-      gtag('config', 'G-GHFW1P61PR')
-      gtag('consent', 'default', {
-        ad_storage: 'denied',
-        analytics_storage: 'denied',
-      })
-    </script>
-
-    <div class="bg-[--bg] dark:bg-[--dark-bg] max-w-none text-base prose prose-neutral dark:prose-invert font-roboto">
+<html lang="es">
+  <Head />
+  <body class="font-meera">
+    <Analytics />
+    <div
+      trans-150
+      class="bg-[--bg] dark:bg-[--dark-bg]
+       max-w-none text-base prose prose-neutral dark:prose-invert font-roboto"
+    >
       <Header />
       <slot />
     </div>
   </body>
 </html>
-
-<style is:global>
-  :root {
-    --bg: #fff;
-    --dark-bg: #2b3235;
-    --remark: #ff4300;
-    --dark-remark: #ff9689;
-    --normal: #3c3c3c;
-    --dark-normal: #fff;
-  }
-</style>

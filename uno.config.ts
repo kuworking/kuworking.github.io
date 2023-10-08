@@ -9,7 +9,7 @@ export default defineConfig({
     'is-special-link': 'text-[--remark] dark:text-[--dark-remark] hover:text-[#424242] dark:hover:text-[#AE7373] font-bold',
     'is-em': 'bg-[--remark] dark:bg-[--dark-remark] text-[--dark-normal] dark:text-[--normal]',
     'is-code': '',
-    'trans': 'transition duration-150 ease-in-out'
+    'trans-150': 'transition duration-150 ease-in-out'
   },
   theme: {
     breakpoints: {

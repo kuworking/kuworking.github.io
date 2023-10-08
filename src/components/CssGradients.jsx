@@ -6,6 +6,14 @@ const get_random_gradient = () => {
   const randomHSLA = () => `hsla(${~~(360 * Math.random())}, 100%,  65%, 1)`
   const randomAngle = () => Math.round(Math.random() * 360)
   return 'background: linear-gradient(' + randomAngle() + 'deg, ' + randomHSLA() + ', ' + randomHSLA() + ')'
+
+  /*
+  const randomHue = Math.floor(Math.random() * 360);
+  const randomSaturation = Math.floor(Math.random() * 100);
+  const randomLightness = Math.floor(Math.random() * 100);
+  
+  const gradientString = `linear-gradient(to right, hsl(${randomHue}, ${randomSaturation}%, ${randomLightness}%), hsl(${randomHue + 180}, ${randomSaturation}%, ${randomLightness}%))`;
+*/
 }
 const number_of_gradients = 20
 

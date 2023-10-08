@@ -1,0 +1,17 @@
+:root {
+  --bg: #fff;
+  --dark-bg: #2b3235;
+  --remark: #ff4300;
+  --dark-remark: #ff9689;
+  --normal: #3c3c3c;
+  --dark-normal: #fff;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
