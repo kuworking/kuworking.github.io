@@ -88,4 +88,4 @@ for (const [key, entry] of Object.entries(myObject)) {
 */
 ```
 
-La diferencia con opciones más modernas como el `Array.forEach()` es que en el caso del `forEach` el bucle lanza funciones en paralelo, mientras que en el `for .. of` el bucle espera a que cada ciclo termine antes de empezar el siguiente, una diferencia que conviene no olvidar (lo tienes [aquí](/javascript-for-vs-foreach))
+La diferencia con opciones más modernas como el `Array.forEach()` es que en el caso del `forEach` el bucle lanza funciones en paralelo, mientras que en el `for .. of` el bucle espera a que cada ciclo termine antes de empezar el siguiente, una diferencia que conviene no olvidar (lo tienes [aquí](/for-vs-foreach))

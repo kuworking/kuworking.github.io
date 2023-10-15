@@ -5,7 +5,7 @@ title: 'JavaScript reduce para implementar #pipping#'
 
 Por `pipping()` se entiende una manera de concatenar métodos que nos permite ser más declarativos y programar más funcionalmente (huyendo de la orientación a objetos)
 
-El reduce no deja de ser un `superMap`, un `superForEach` o un `superFilter` (aquí tienes [la entrada del reduce](/javascript-como-funciona-array-reduce))
+El reduce no deja de ser un `superMap`, un `superForEach` o un `superFilter` (aquí tienes [la entrada del reduce](/como-funciona-array-reduce))
 
 Pero qué pasa cuando utilizamos el `reduce` para iterar un conjunto de funciones?
 
