@@ -3,7 +3,7 @@ date: '2021-12-08'
 title: 'Cómo copiar un #array# en JavaScript'
 ---
 
-Al igual que vimos con `objects` en [cómo copiar un object](/javascript-como-copiar-objects), clonar `arrays` no es trivial ya que en `JavaScript` todo se copia por _referencia_
+Al igual que vimos con `objects` en [cómo copiar un object](/como-copiar-objects), clonar `arrays` no es trivial ya que en `JavaScript` todo se copia por _referencia_
 
 Cuál es el problema con clonar arrays?
 
