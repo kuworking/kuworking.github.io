@@ -1,19 +1,22 @@
 ---
+
 ---
 
 <>
   <!-- Google tag (gtag.js) -->
-  <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-GHFW1P61PR"></script>
+  <script is:inline defer src="https://www.googletagmanager.com/gtag/js?id=G-GHFW1P61PR"></script>
   <script is:inline>
-    window.dataLayer = window.dataLayer || []
-    function gtag() {
-      dataLayer.push(arguments)
-    }
+  window.dataLayer = window.dataLayer || []
+  function gtag() {
+    dataLayer.push(arguments)
+  }
+  setTimeout(function () {
     gtag('js', new Date())
     gtag('config', 'G-GHFW1P61PR')
     gtag('consent', 'default', {
       ad_storage: 'denied',
       analytics_storage: 'denied',
     })
+  }, 5000)
   </script>
 </>

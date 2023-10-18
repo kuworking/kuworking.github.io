@@ -26,9 +26,7 @@ export default defineConfig({
     presetTypography({
       cssExtend: {},
     }),
-    presetIcons({
-      /* options */
-    }),
+    presetIcons({}),
     presetWebFonts({
       provider: 'google', // default provider
       fonts: {
