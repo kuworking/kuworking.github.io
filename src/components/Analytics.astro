@@ -1,15 +1,28 @@
 ---
-
+// 2023.10.18
 ---
 
 <>
   <!-- Google tag (gtag.js) -->
-  <script is:inline defer src="https://www.googletagmanager.com/gtag/js?id=G-GHFW1P61PR"></script>
   <script is:inline>
-  window.dataLayer = window.dataLayer || []
+  function addGTM() {
+    var GTMscript = document.createElement('script')
+    GTMscript.type = 'text/javascript'
+    GTMscript.async = true
+    GTMscript.src = 'https://www.googletagmanager.com/gtag/js?id=G-GHFW1P61PR'
+      ; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(GTMscript)
+  }
+
   function gtag() {
     dataLayer.push(arguments)
   }
+
+  window.dataLayer = window.dataLayer || []
+
+  setTimeout(function () {
+    addGTM()
+  }, 5000)
+
   setTimeout(function () {
     gtag('js', new Date())
     gtag('config', 'G-GHFW1P61PR')
@@ -17,6 +30,6 @@
       ad_storage: 'denied',
       analytics_storage: 'denied',
     })
-  }, 5000)
+  }, 6000)
   </script>
 </>
